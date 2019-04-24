@@ -16,7 +16,7 @@ var searchYouTube = ({key, query, max = 5}, callback) => {
       responseJSON.error.errors.forEach((err) =>
         console.error(err)
       );
-    });
+    })
 };
 
 export default searchYouTube;
