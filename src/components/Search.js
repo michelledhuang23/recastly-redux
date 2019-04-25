@@ -10,7 +10,7 @@ class Search extends React.Component {
     };
   }
 
-  handleInputChange(e) {
+  handleSearchInputChange(e) { // originally handleSearchChange 
     this.props.getYouTubeVideos(e.target.value);
     this.setState({
       value: e.target.value

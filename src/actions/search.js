@@ -10,17 +10,16 @@ var handleVideoSearch = (q) => {
     query: q
   };
 
-  var newVideos = searchYouTube(options, (videos) => {
-    return videos;
-  });
+searchYouTube(options, (videos) => {
+    return {
+      type: 'HANDLE_VIDEO_SEARCH',
+      videos: function() {
+      changeVideoList(videos);
+      changeVideo(videos[0]);
+      }
+  }
+});
 
-  return {
-    type: 'HANDLE_VIDEO_SEARCH',
-    videos: () => {
-      changeVideoList(newVideos);
-      changeVideo(newVideos[0]);
-    }
-  };
   //TODO:  Write an asynchronous action to handle a video search!
 };
 
